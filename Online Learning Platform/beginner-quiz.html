@@ -1,0 +1,22 @@
+<form id="beginnerQuizForm" onsubmit="submitQuiz(event)">
+    <!-- Question 1 -->
+    <fieldset>
+        <legend>Question 1: What is the capital of France?</legend>
+        <label><input type="radio" name="q1" value="a" required> a) Berlin</label><br>
+        <label><input type="radio" name="q1" value="b"> b) Madrid</label><br>
+        <label><input type="radio" name="q1" value="c"> c) Paris</label><br>
+        <label><input type="radio" name="q1" value="d"> d) Rome</label><br>
+        <p class="feedback" id="feedback-q1"></p> <!-- Feedback for correct/incorrect answers -->
+    </fieldset>
+    <!-- Question 2 -->
+    <fieldset>
+        <legend>Question 2: What is 2 + 2?</legend>
+        <label><input type="radio" name="q2" value="a" required> a) 3</label><br>
+        <label><input type="radio" name="q2" value="b"> b) 4</label><br>
+        <label><input type="radio" name="q2" value="c"> c) 5</label><br>
+        <label><input type="radio" name="q2" value="d"> d) 6</label><br>
+        <p class="feedback" id="feedback-q2"></p>
+    </fieldset>
+    <button type="submit">Submit Quiz</button>
+</form>
+<p id="result"></p>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mock Test</h1>
+    </header>
+
+    <main>
+        <form id="mockTestForm" onsubmit="submitMockTest(event)">
+            <h2>Question 1: What is a function in JavaScript?</h2>
+            <input type="radio" name="q1" value="a"> A piece of code that can be reused<br>
+            <input type="radio" name="q1" value="b"> A method for styling HTML<br>
+            <input type="radio" name="q1" value="c"> A type of object<br><br>
+
+            <h2>Question 2: What does JSON stand for?</h2>
+            <input type="radio" name="q2" value="a"> JavaScript Object Network<br>
+            <input type="radio" name="q2" value="b"> JavaScript Object Notation<br>
+            <input type="radio" name="q2" value="c"> JavaScript Online Notation<br><br>
+
+            <h2>Question 3: What is the DOM?</h2>
+            <input type="radio" name="q3" value="a"> Document Object Model<br>
+            <input type="radio" name="q3" value="b"> Data Operations Model<br>
+            <input type="radio" name="q3" value="c"> Document Online Model<br><br>
+
+            <button type="submit">Submit Test</button>
+        </form>
+        <div id="mockTestResult"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Learning Platform</p>
+    </footer>
+
+    <script>
+        function submitMockTest(event) {
+            event.preventDefault();
+            let score = 0;
+            const answers = {
+                q1: 'a',  // Correct answer for Question 1
+                q2: 'b',  // Correct answer for Question 2
+                q3: 'a'   // Correct answer for Question 3
+            };
+
+            const form = document.getElementById('mockTestForm');
+            const formData = new FormData(form);
+
+            for (let question in answers) {
+                if (formData.get(question) === answers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('mockTestResult').innerHTML = `Your score: ${score}/3`;
+        }
+    </script>
+</body>
+</html>

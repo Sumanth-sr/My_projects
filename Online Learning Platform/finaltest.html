@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Final Test</h1>
+    </header>
+
+    <main>
+        <form id="finalTestForm" onsubmit="submitFinalTest(event)">
+            <h2>Question 1: What is the use of the "let" keyword in JavaScript?</h2>
+            <input type="radio" name="q1" value="a"> Declares a constant<br>
+            <input type="radio" name="q1" value="b"> Declares a block-scoped variable<br>
+            <input type="radio" name="q1" value="c"> Declares a global variable<br><br>
+
+            <h2>Question 2: What is a Promise in JavaScript?</h2>
+            <input type="radio" name="q2" value="a"> A function<br>
+            <input type="radio" name="q2" value="b"> An object representing eventual completion or failure<br>
+            <input type="radio" name="q2" value="c"> A loop<br><br>
+
+            <h2>Question 3: What does API stand for?</h2>
+            <input type="radio" name="q3" value="a"> Application Programming Interface<br>
+            <input type="radio" name="q3" value="b"> Applied Program Integration<br>
+            <input type="radio" name="q3" value="c"> Automatic Program Interface<br><br>
+
+            <button type="submit">Submit Test</button>
+        </form>
+        <div id="finalTestResult"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Learning Platform</p>
+    </footer>
+
+    <script>
+        function submitFinalTest(event) {
+            event.preventDefault();
+            let score = 0;
+            const answers = {
+                q1: 'b',  // Correct answer for Question 1
+                q2: 'b',  // Correct answer for Question 2
+                q3: 'a'   // Correct answer for Question 3
+            };
+
+            const form = document.getElementById('finalTestForm');
+            const formData = new FormData(form);
+
+            for (let question in answers) {
+                if (formData.get(question) === answers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('finalTestResult').innerHTML = `Your score: ${score}/3`;
+        }
+    </script>
+</body>
+</html>

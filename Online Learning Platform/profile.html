@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="displayUserProfile()">
+    <header>
+        <h1>User Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome, <span id="usernameDisplay"></span>!</h2>
+            <h3>Your Quiz Statistics</h3>
+            <ul>
+                <li>Total Quizzes Taken: <span id="totalQuizzes"></span></li>
+                <li>Total Correct Answers: <span id="totalCorrect"></span></li>
+                <li>Total Wrong Answers: <span id="totalWrong"></span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Learning Platform</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

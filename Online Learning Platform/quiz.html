@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Beginner Quiz</h1>
+    </header>
+
+    <main>
+        <form id="beginnerQuizForm" onsubmit="submitQuiz(event)">
+            <h2>Question 1: What is HTML?</h2>
+            <input type="radio" name="q1" value="a"> A programming language<br>
+            <input type="radio" name="q1" value="b"> A markup language<br>
+            <input type="radio" name="q1" value="c"> A styling tool<br><br>
+
+            <h2>Question 2: What does CSS stand for?</h2>
+            <input type="radio" name="q2" value="a"> Computer Style Sheets<br>
+            <input type="radio" name="q2" value="b"> Cascading Style Sheets<br>
+            <input type="radio" name="q2" value="c"> Creative Style Sheets<br><br>
+
+            <h2>Question 3: What is JavaScript used for?</h2>
+            <input type="radio" name="q3" value="a"> Creating animations<br>
+            <input type="radio" name="q3" value="b"> Handling database operations<br>
+            <input type="radio" name="q3" value="c"> Adding interactivity to websites<br><br>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+        <div id="quizResult"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Learning Platform</p>
+    </footer>
+
+    <script>
+        function submitQuiz(event) {
+            event.preventDefault();
+            let score = 0;
+            const answers = {
+                q1: 'b',  // Correct answer for Question 1
+                q2: 'b',  // Correct answer for Question 2
+                q3: 'c'   // Correct answer for Question 3
+            };
+
+            const form = document.getElementById('beginnerQuizForm');
+            const formData = new FormData(form);
+
+            for (let question in answers) {
+                if (formData.get(question) === answers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('quizResult').innerHTML = `Your score: ${score}/3`;
+        }
+    </script>
+</body>
+</html>
+
+  

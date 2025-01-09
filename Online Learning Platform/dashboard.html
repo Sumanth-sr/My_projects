@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>User Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="quiz.html">Take a Quiz</a></li>
+                <li><a href="mocktest.html">Mock Test</a></li>
+                <li><a href="finaltest.html">Final Test</a></li>
+                <li><a href="#" onclick="logoutUser()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome, [Username]</h2>
+            <p>Here you can track your progress, take quizzes, and level up!</p>
+        </section>
+
+        <section>
+            <h3>Your Progress</h3>
+            <ul>
+                <li>Beginner Level: <span id="beginnerStatus">Not Completed</span></li>
+                <li>Intermediate Level: <span id="intermediateStatus">Not Completed</span></li>
+                <li>Pro Level: <span id="proStatus">Not Completed</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Available Tests</h3>
+            <ul>
+                <li><a href="quiz.html">Take the Beginner Quiz</a></li>
+                <li><a href="mocktest.html">Take a Mock Test</a></li>
+                <li><a href="finaltest.html">Take the Final Test</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Learning Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function logoutUser() {
+            // Perform logout logic (e.g., clear user session)
+            alert("You have been logged out!");
+            window.location.href = "index.html"; // Redirect to Home Page
+        }
+    </script>
+</body>
+</html>
