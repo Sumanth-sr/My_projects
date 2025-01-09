@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title text-center">Diabetes Prediction Model</h1>
+                <p class="card-text text-center">Model Accuracy: <strong>{{ accuracy }}</strong></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2>Classification Report:</h2>
+                <pre>{{ classification_rep }}</pre>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2>Confusion Matrix:</h2>
+                <pre>{{ conf_matrix }}</pre>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2>Predict Diabetes</h2>
+                <form action="/predict" method="post">
+                    <div class="form-group">
+                        <label for="glucose">Glucose:</label>
+                        <input type="text" class="form-control" id="glucose" name="glucose" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="insulin">Insulin:</label>
+                        <input type="text" class="form-control" id="insulin" name="insulin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bmi">BMI:</label>
+                        <input type="text" class="form-control" id="bmi" name="bmi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="text" class="form-control" id="age" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skin_thickness">Skin Thickness:</label>
+                        <input type="text" class="form-control" id="skin_thickness" name="skin_thickness" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

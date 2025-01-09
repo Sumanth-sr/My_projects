@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h3>Result: {{ prediction_text }}</h3>
+    <div>
+        <h4>Graphs:</h4>
+        <img src="{{ url_for('get_graph', filename='bar_chart.png') }}" alt="Bar Chart">
+        <img src="{{ url_for('get_graph', filename='pie_chart.png') }}" alt="Pie Chart">
+        <img src="{{ url_for('get_graph', filename='line_chart.png') }}" alt="Line Chart">
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
