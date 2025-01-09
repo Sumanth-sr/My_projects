@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('static/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 800px;
+        }
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            color: red;
+        }
+
+        /* Form Layout */
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            width: 48%; /* Each form input takes up 48% of the container width */
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            color: black;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fraud Detection</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="amount">Transaction Amount (₹):</label>
+                <input type="number" id="amount" name="amount" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="payment_method">Payment Method:</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Other UPI">Other UPI</option>
+                    <option value="Net Banking">Net Banking</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="product_category">Product Category:</label>
+                <input type="text" id="product_category" name="product_category" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="customer_age">Customer Age:</label>
+                <input type="number" id="customer_age" name="customer_age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="device">Device Used:</label>
+                <input type="text" id="device" name="device" required>
+            </div>
+            <div class="form-group">
+                <label for="account_age_days">Account Age (Days):</label>
+                <input type="number" id="account_age_days" name="account_age_days" required>
+            </div>
+            <div class="form-group">
+                <label for="transaction_hour">Transaction Hour:</label>
+                <input type="number" id="transaction_hour" name="transaction_hour" required>
+            </div>
+            <div class="form-group">
+                <label for="address_match">Address Match (Yes/No):</label>
+                <select id="address_match" name="address_match" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="model">Model (Fraud Prediction):</label>
+                <select id="model" name="model" required>
+                    <option value="Hybrid Model">Hybrid Model (Default)</option>
+                    <option value="Random Forest">Random Forest</option>
+                    <option value="Isolation Forest">Isolation Forest</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
